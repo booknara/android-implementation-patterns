@@ -1,0 +1,22 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Shown ActionBar -->
+    <item
+        android:id="@+id/shown_menu"
+        android:icon="@drawable/ic_launcher_foreground"
+        app:showAsAction="ifRoom"
+        android:title="Menu 1"/>
+
+    <!-- Hidden ActionBar -->
+    <item
+        android:id="@+id/overflow_menu_1"
+        app:showAsAction="never"
+        android:title="Overflow Menu 1" />
+
+    <item
+        android:id="@+id/overflow_menu_2"
+        app:showAsAction="never"
+        android:title="Overflow Menu 2" />
+
+</menu>
