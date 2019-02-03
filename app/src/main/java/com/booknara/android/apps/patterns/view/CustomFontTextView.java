@@ -3,12 +3,13 @@ package com.booknara.android.apps.patterns.view;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.AppCompatTextView;
 import android.util.AttributeSet;
 import android.util.Log;
 
 import com.booknara.android.apps.patterns.R;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.widget.AppCompatTextView;
 
 public class CustomFontTextView extends AppCompatTextView {
     private static final String TAG = "CustomFontTextView";

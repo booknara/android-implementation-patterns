@@ -1,12 +1,13 @@
 package com.booknara.android.apps.patterns.utils;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
 
 import com.booknara.android.apps.patterns.BuildConfig;
+
+import androidx.annotation.NonNull;
 
 public class ToastFactory {
     private static final String TAG = "ToastFactory";
