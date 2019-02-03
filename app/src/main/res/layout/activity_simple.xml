@@ -1,24 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".activity.SimpleActivity">
 
     <include
         android:id="@+id/toolbar_view"
         layout="@layout/main_toolbar"/>
 
-    <TextView
+    <com.booknara.android.apps.patterns.view.CustomFontTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:text="Simple Activity Example"
-        />
+        android:layout_centerInParent="true"
+        app:typeface="Ubuntu-Bold.ttf"
+        android:text="Simple Activity Example" />
 
-</android.support.constraint.ConstraintLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/sub_fab1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:fabSize="normal"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@android:drawable/ic_dialog_map"
+        app:backgroundTint="@color/colorPrimary"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/sub_fab2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:fabSize="normal"
+        android:src="@android:drawable/ic_dialog_dialer"
+        app:backgroundTint="@color/colorPrimary"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/sub_fab3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        app:fabSize="normal"
+        android:src="@android:drawable/ic_dialog_alert"
+        app:backgroundTint="@color/colorPrimary"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/main_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_add_white"
+        app:fabSize="normal"
+        android:layout_margin="16dp"
+        android:visibility="visible"
+        tools:visibility="visible"/>
+
+</RelativeLayout>

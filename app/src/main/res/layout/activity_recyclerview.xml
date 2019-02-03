@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.RecyclerViewActivity">
+
+    <include
+        android:id="@+id/toolbar_view"
+        layout="@layout/main_toolbar"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/phonetic_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_view"
+        tools:listitem="@layout/text_item"/>
+
+</RelativeLayout>

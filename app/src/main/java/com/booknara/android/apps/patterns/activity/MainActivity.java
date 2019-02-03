@@ -1,8 +1,8 @@
 package com.booknara.android.apps.patterns.activity;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.ArrayAdapter;
@@ -34,8 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 "Activity & ListView (Header & Footer)",
                 "Activity & RecyclerView (multiple view types)",
                 "Activity & ViewPager",
-                "Activity & FAB",
-
+                "Activity & Navigation Drawer",
         };
 
         ArrayList<String> patternsList = new ArrayList<>();
@@ -59,18 +58,20 @@ public class MainActivity extends AppCompatActivity {
                     break;
                 case 2:
                     // Activity & ListView (Header & Footer)
-                    // Simple Activity
                     intent.setClass(this, ListActivity.class);
                     startActivity(intent);
                     break;
                 case 3:
                     // Activity & RecyclerView (multiple view types)
+                    intent.setClass(this, RecyclerViewActivity.class);
+                    startActivity(intent);
                     break;
                 case 4:
                     // Activity & ViewPager
+                    intent.setClass(this, ViewPagerActivity.class);
+                    startActivity(intent);
                     break;
                 case 5:
-                    // Activity & FAB
                     break;
                 default:
                     break;

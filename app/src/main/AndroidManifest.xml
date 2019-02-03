@@ -32,6 +32,14 @@
             android:name=".activity.ListActivity"
             android:parentActivityName=".activity.MainActivity">
         </activity>
+        <activity
+            android:name=".activity.RecyclerViewActivity"
+            android:parentActivityName=".activity.MainActivity">
+        </activity>
+        <activity
+            android:name=".activity.ViewPagerActivity"
+            android:parentActivityName=".activity.MainActivity">
+        </activity>
         <!-- service -->
         <service android:name=".service.AppUpdateService"
             android:exported="false"/>

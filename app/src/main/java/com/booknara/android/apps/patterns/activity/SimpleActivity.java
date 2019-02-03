@@ -2,9 +2,9 @@ package com.booknara.android.apps.patterns.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -16,6 +16,12 @@ import static com.booknara.android.apps.patterns.Constants.IntentKey.ACTIVITY_TI
 public class SimpleActivity extends AppCompatActivity {
     private static final String TAG = "SimpleActivity";
 
+    private FloatingActionButton mainFAB;
+    private FloatingActionButton sub1FAB;
+    private FloatingActionButton sub2FAB;
+    private FloatingActionButton sub3FAB;
+
+    private boolean fabOpened = false;
     //region Lifecycle callback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +39,22 @@ public class SimpleActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        mainFAB = findViewById(R.id.main_fab);
+        sub1FAB = findViewById(R.id.sub_fab1);
+        sub2FAB = findViewById(R.id.sub_fab2);
+        sub3FAB = findViewById(R.id.sub_fab3);
+
+        mainFAB.setOnClickListener(v -> {
+            if (fabOpened) {
+                closeFABMenu();
+            } else {
+                showFABMenu();
+            }
+
+//            Snackbar.make(v, "Here is a Snackbar", Snackbar.LENGTH_SHORT)
+//                    .setAction("Action", null).show();
+        });
     }
 
     @Override
@@ -91,4 +113,18 @@ public class SimpleActivity extends AppCompatActivity {
         }
     }
     //endregion
+
+    private void showFABMenu() {
+        fabOpened = true;
+        sub1FAB.animate().translationY(-getResources().getDimension(R.dimen.fab_sub_1_height));
+        sub2FAB.animate().translationY(-getResources().getDimension(R.dimen.fab_sub_2_height));
+        sub3FAB.animate().translationY(-getResources().getDimension(R.dimen.fab_sub_3_height));
+    }
+
+    private void closeFABMenu() {
+        fabOpened = false;
+        sub1FAB.animate().translationY(0);
+        sub2FAB.animate().translationY(0);
+        sub3FAB.animate().translationY(0);
+    }
 }

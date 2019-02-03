@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="first_list_item_top_offset">8dp</dimen>
+    <dimen name="middle_list_item_top_offset">3dp</dimen>
+    <dimen name="middle_list_item_bottom_offset">0dp</dimen>
+    <dimen name="last_list_item_bottom_offset">8dp</dimen>
+
+    <dimen name="item_left_offset">6dp</dimen>
+    <dimen name="item_right_offset">6dp</dimen>
+
+    <dimen name="fab_sub_1_height">65dp</dimen>
+    <dimen name="fab_sub_2_height">130dp</dimen>
+    <dimen name="fab_sub_3_height">195dp</dimen>
+
+</resources>
