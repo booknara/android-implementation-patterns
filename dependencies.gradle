@@ -1,0 +1,59 @@
+ext {
+    /*
+     * Library version
+     */
+    // Android Gradle
+    androidGradlePluginVersion = '3.3.1'
+
+    // Android X
+    supportVersion = '1.0.0'
+    constrainLayout = '1.1.2'
+
+    // Test
+    jUnitVersion = '4.12'
+
+    // AndroidTest Library
+    runnerVersion = '1.1.0'
+    espressoCoreVersion = '3.1.0'
+
+    // Kotlin
+    kotlinVersion = '1.3.21'
+    coreKtxVersion = '1.3.21'
+
+    // Sdk version number
+    minSdkVersionNum = 16
+    compileSdkVersionNum = 28
+    targetSdkVersionNum = 28
+
+    plugInDependencies = [
+            androidGradle: "com.android.tools.build:gradle:${androidGradlePluginVersion}",
+            kotlin       : "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}"
+    ]
+
+    testDependencies = [
+            junit   : "junit:junit:${jUnitVersion}",
+    ]
+
+    androidTestDependencies = [
+            runner             : "androidx.test:runner:${runnerVersion}",
+            espressoCore      : "androidx.test.espresso:espresso-core:${espressoCoreVersion}",
+            espressoWeb       : "androidx.test.espresso:espresso-web:${espressoCoreVersion}",
+            espressoIntents   : "androidx.test.espresso:espresso-intents:${espressoCoreVersion}"
+    ]
+
+    supportDependencies = [
+            supportV4       : "androidx.legacy:legacy-support-v4:${supportVersion}",
+            supportV13      : "androidx.legacy:legacy-support-v13:${supportVersion}",
+            appCompat       : "androidx.appcompat:appcompat:${supportVersion}",
+            design          : "com.google.android.material:material:${supportVersion}",
+            recyclerview    : "androidx.recyclerview:recyclerview:${supportVersion}",
+            cardview        : "androidx.cardview:cardview:${supportVersion}",
+            constrainLayout : "androidx.constraintlayout:constraintlayout:${constrainLayout}"
+    ]
+
+    kotlinDependencies = [
+            coreKtx     : "androidx.core:core-ktx:${coreKtxVersion}",
+            kotlin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}",
+            kotlinStdlib      : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
+    ]
+}
