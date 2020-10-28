@@ -19,5 +19,4 @@ gradle*
 # misc
 /captures
 .externalNativeBuild
-/.galaxy/GE-android-implementation-patterns.log
-/.galaxy/GE-android-implementation-patterns.log.lck
+/.galaxy/
