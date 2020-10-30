@@ -4,7 +4,7 @@ Android Service
 * Service
     - This runs on the same main thread which invokes this service and performs some background operation. For any long running operation happening on the main thread it is recommended to create a new thread and do the job (eg; Handler) by not impacting the main thread's performance.
     - Drawback: Runs on the main thread
-* IntentService
+* IntentService (Service + HandlerThread(internally))
     - Intent service also helps in doing some long running (indefinite) background task. The only difference is that it creates a new thread to perform this task and does not run on the main thread. Does the given job on it's onHandleIntent.
     - Drawback: The job given to the IntentService would get lost when the application is killed
 * JobIntentService

@@ -1,58 +1,56 @@
 package com.booknara.android.apps.patterns.activity
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
-import android.widget.Toast
+import android.widget.ImageView
+import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.databinding.DataBindingUtil
 import com.booknara.android.apps.background.WorkerHandlerThread
 import com.booknara.android.apps.patterns.R
-import java.util.concurrent.TimeUnit
+import com.booknara.android.apps.patterns.databinding.ActivityHandlerThreadBinding
+import java.util.*
 
 
-class HandlerThreadActivity: AppCompatActivity() {
-    private val uiHandler = Handler()
+class HandlerThreadActivity: AppCompatActivity(), WorkerHandlerThread.Callback {
     private lateinit var workerHandlerThread: WorkerHandlerThread
+    private lateinit var binding: ActivityHandlerThreadBinding
+
+    private var activityVisible: Boolean = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_empty)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar_view)
+
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_handler_thread)
+        val toolbar = binding.toolbarView as Toolbar
         setSupportActionBar(toolbar)
 
-        workerHandlerThread = WorkerHandlerThread("WorkerHandlerThread")
-        val task = Runnable {
-            for (i in 0..3) {
-                try {
-                    TimeUnit.SECONDS.sleep(2)
-                } catch (e: InterruptedException) {
-                    e.printStackTrace()
-                }
-                if (i == 2) {
-                    uiHandler.post(Runnable {
-                        Log.i(TAG, "running")
-                        Toast.makeText(this@HandlerThreadActivity,
-                                "I am at the middle of background task",
-                                Toast.LENGTH_LONG)
-                                .show()
-                    })
-                }
-            }
+        val urls = arrayOf("https://developer.android.com/design/media/principles_delight.png",
+                "https://developer.android.com/design/media/principles_real_objects.png",
+                "https://developer.android.com/design/media/principles_make_it_mine.png",
+                "https://developer.android.com/design/media/principles_get_to_know_me.png")
 
-            uiHandler.post(Runnable {
-                Log.i(TAG, "completed")
-                Toast.makeText(this@HandlerThreadActivity,
-                        "Background task is completed",
-                        Toast.LENGTH_LONG)
-                        .show()
-            })
-        }
+        val uiHandler = Handler()
+        workerHandlerThread = WorkerHandlerThread(uiHandler, this)
 
         workerHandlerThread.start()
         workerHandlerThread.prepareHandler()
-        workerHandlerThread.postTask(task)
-        workerHandlerThread.postTask(task)
+        val random = Random()
+        for (url in urls) {
+            workerHandlerThread.queueTask(url, random.nextInt(2), ImageView(this))
+        }
+    }
+
+    override fun onResume() {
+        activityVisible = true
+        super.onResume()
+    }
+
+    override fun onPause() {
+        activityVisible = false
+        super.onPause()
     }
 
     override fun onDestroy() {
@@ -61,7 +59,19 @@ class HandlerThreadActivity: AppCompatActivity() {
         super.onDestroy()
     }
 
+    @MainThread
+    override fun onImageDownloaded(imageView: ImageView, bitmap: Bitmap, side: Int) {
+        imageView.setImageBitmap(bitmap)
+        if (activityVisible && side == LEFT_SIDE) {
+            binding.leftSideLayout.addView(imageView)
+        } else if (activityVisible && side == RIGHT_SIDE) {
+            binding.rightSideLayout.addView(imageView)
+        }
+    }
+
     companion object {
         const val TAG = "HandlerActivity"
+        const val LEFT_SIDE = 0
+        const val RIGHT_SIDE = 1
     }
 }
