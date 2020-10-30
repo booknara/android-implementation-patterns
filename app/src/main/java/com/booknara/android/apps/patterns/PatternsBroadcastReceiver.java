@@ -6,7 +6,10 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.booknara.android.apps.patterns.service.AppUpdateJobIntentService;
 import com.booknara.android.apps.patterns.service.AppUpdateService;
+
+import static com.booknara.android.apps.patterns.service.AppUpdateJobIntentService.APP_UPDATE_JOB_ID;
 
 public class PatternsBroadcastReceiver extends BroadcastReceiver {
     private static final String TAG = "PatternsBroadcastReceiver";
@@ -28,7 +31,13 @@ public class PatternsBroadcastReceiver extends BroadcastReceiver {
         Log.d(TAG, "onReceive: action " + action);
         switch (action) {
             case Intent.ACTION_MY_PACKAGE_REPLACED:
+                // 1. IntentService
                 context.startService(new Intent(context, AppUpdateService.class));
+
+                // 2. JobIntentService
+                AppUpdateJobIntentService.enqueueWork(context,
+                        AppUpdateJobIntentService.class, APP_UPDATE_JOB_ID,
+                        new Intent(context, AppUpdateJobIntentService.class));
                 break;
             case Intent.ACTION_BOOT_COMPLETED:
                 Log.d(TAG, "onReceive: boot completed");

@@ -6,13 +6,14 @@ import android.util.Log;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.booknara.android.apps.patterns.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import java.util.List;
 
 import static com.booknara.android.apps.patterns.Constants.IntentKey.ACTIVITY_TITLE;
 
@@ -36,9 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 "Activity & RecyclerView (multiple view types)",
                 "Activity & ViewPager",
                 "Activity & Navigation Drawer",
+                "Activity Timer using ViewModel",
+                "Foreground Service",
+                "AsyncTask",
+                "Handler",
+                "HandlerThread",
         };
 
-        ArrayList<String> patternsList = new ArrayList<>();
+        List<String> patternsList = new ArrayList<>();
         patternsList.addAll(Arrays.asList(patterns));
 
         activityList.setAdapter(new ArrayAdapter<>(this, R.layout.text_item, patternsList));
@@ -73,10 +79,38 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                     break;
                 case 5:
+                    // Navigation Drawer
+                    break;
+                case 6:
+                    // Activity & ViewPager
+                    intent.setClass(this, TimerLiveDataActivity.class);
+                    startActivity(intent);
+                    break;
+                case 7:
+                    // Foreground Service
+                    intent.setClass(this, ForegroundServiceActivity.class);
+                    startActivity(intent);
+                    break;
+                case 8:
+                    // AsyncTask
+                    intent.setClass(this, AsyncTaskActivity.class);
+                    startActivity(intent);
+                    break;
+                case 9:
+                    // AsyncTask
+                    intent.setClass(this, HandlerActivity.class);
+                    startActivity(intent);
+                    break;
+                case 10:
+                    // AsyncTask
+                    intent.setClass(this, HandlerThreadActivity.class);
+                    startActivity(intent);
                     break;
                 default:
                     break;
             }
         });
+
+
     }
 }
