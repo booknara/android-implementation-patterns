@@ -1,11 +1,11 @@
-package com.booknara.android.apps.database.dao
+package com.booknara.android.apps.patterns.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.booknara.android.apps.database.entity.ID
-import com.booknara.android.apps.database.entity.Quote
+import com.booknara.android.apps.patterns.database.entity.ID
+import com.booknara.android.apps.patterns.database.entity.Quote
 import kotlinx.coroutines.flow.Flow
 
 @Dao

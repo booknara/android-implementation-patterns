@@ -1,11 +1,11 @@
-package com.booknara.android.apps.database
+package com.booknara.android.apps.patterns.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.booknara.android.apps.database.dao.QuoteDao
-import com.booknara.android.apps.database.entity.Quote
+import com.booknara.android.apps.patterns.database.dao.QuoteDao
+import com.booknara.android.apps.patterns.database.entity.Quote
 
 @Database(entities = arrayOf(Quote::class), version = 1, exportSchema = true)
 abstract class QuoteDatabase: RoomDatabase() {

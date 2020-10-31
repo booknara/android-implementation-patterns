@@ -1,4 +1,4 @@
-package com.booknara.android.apps.database.entity
+package com.booknara.android.apps.patterns.database.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

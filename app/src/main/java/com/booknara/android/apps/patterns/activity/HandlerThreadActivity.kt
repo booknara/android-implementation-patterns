@@ -8,8 +8,8 @@ import androidx.annotation.MainThread
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.databinding.DataBindingUtil
-import com.booknara.android.apps.background.WorkerHandlerThread
 import com.booknara.android.apps.patterns.R
+import com.booknara.android.apps.patterns.background.WorkerHandlerThread
 import com.booknara.android.apps.patterns.databinding.ActivityHandlerThreadBinding
 import java.util.*
 

@@ -1,7 +1,7 @@
-package com.booknara.android.apps.repository
+package com.booknara.android.apps.patterns.repository
 
-import com.booknara.android.apps.database.dao.QuoteDao
-import com.booknara.android.apps.database.entity.Quote
+import com.booknara.android.apps.patterns.database.dao.QuoteDao
+import com.booknara.android.apps.patterns.database.entity.Quote
 import com.booknara.android.apps.patterns.model.Resource
 import com.booknara.android.apps.patterns.network.ApiInterface
 import com.booknara.android.apps.patterns.network.networkBoundResource

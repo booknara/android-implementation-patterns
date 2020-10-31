@@ -1,4 +1,4 @@
-package com.booknara.android.apps.background
+package com.booknara.android.apps.patterns.background
 
 import android.content.Context
 import android.os.AsyncTask
