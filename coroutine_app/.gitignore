@@ -1,0 +1,22 @@
+# gradle setting
+.gradle/
+gradle*
+!gradle.properties
+
+# android studio
+*.iml
+.idea/
+
+# build output
+/build
+
+# local setting file
+/local.properties
+
+# mac osx
+.DS_Store
+
+# misc
+/captures
+.externalNativeBuild
+/.galaxy/
