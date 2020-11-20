@@ -17,8 +17,9 @@ ext {
     espressoCoreVersion = '3.1.0'
 
     // Kotlin
-    kotlinVersion = '1.3.21'
-    coreKtxVersion = '1.3.21'
+    kotlinVersion = '1.4.10'
+    coreKtxVersion = '1.3.2'
+    fragmentKtxVersion = '1.2.5'
 
     // Sdk version number
     minSdkVersionNum = 16
@@ -53,6 +54,7 @@ ext {
 
     kotlinDependencies = [
             coreKtx     : "androidx.core:core-ktx:${coreKtxVersion}",
+            fragmentKtx     : "androidx.fragment:fragment-ktx:${fragmentKtxVersion}",
             kotlin      : "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}",
             kotlinStdlib      : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${kotlinVersion}"
     ]
