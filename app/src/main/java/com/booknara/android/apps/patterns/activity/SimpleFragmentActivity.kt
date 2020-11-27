@@ -12,39 +12,39 @@ import com.booknara.android.apps.patterns.fragment.SimpleFragment
 
 class SimpleFragmentActivity: AppCompatActivity() {
 
-    lateinit var binding: ActivitySimpleFragmentBinding
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_simple_fragment)
+  lateinit var binding: ActivitySimpleFragmentBinding
 
-        var title = ""
-        intent?.let {
-            title = it.getStringExtra(ACTIVITY_TITLE)
-        }
-        binding.toolbarView.title = title
-        setSupportActionBar(binding.toolbarView)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setDisplayShowHomeEnabled(true)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    binding = DataBindingUtil
+      .setContentView(this, R.layout.activity_simple_fragment)
 
-        setDetailContainer(SimpleFragment.newInstance())
-    }
+    val title = intent?.getStringExtra(ACTIVITY_TITLE) ?: ""
 
-    override fun onSupportNavigateUp(): Boolean {
-        onBackPressed()
-        return true
-    }
+    binding.toolbarView.title = title
+    setSupportActionBar(binding.toolbarView)
+    supportActionBar?.setDisplayHomeAsUpEnabled(true)
+    supportActionBar?.setDisplayShowHomeEnabled(true)
 
-    private fun setDetailContainer(fragment: Fragment) {
+    setDetailContainer(SimpleFragment.newInstance())
+  }
+
+  override fun onSupportNavigateUp(): Boolean {
+    onBackPressed()
+    return true
+  }
+
+  private fun setDetailContainer(fragment: Fragment) {
 //        val ft = supportFragmentManager.beginTransaction()
 //        ft.add(R.id.simple_fragment, fragment, SimpleFragment.TAG)
 //        ft.commitAllowingStateLoss()
 
-        supportFragmentManager.commit(allowStateLoss = true) {
-            add(R.id.simple_fragment, fragment, SimpleFragment.TAG)
-        }
+    supportFragmentManager.commit(allowStateLoss = true) {
+      add(R.id.simple_fragment, fragment, SimpleFragment.TAG)
     }
+  }
 
-    companion object {
-        const val TAG = "SimpleFragmentActivity"
-    }
+  companion object {
+    const val TAG = "SimpleFragmentActivity"
+  }
 }
