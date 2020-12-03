@@ -1,7 +1,7 @@
-package com.booknara.android.apps.patterns;
+package com.booknara.android.apps.patterns
 
-public class Constants {
-    public static class IntentKey {
-        public static final String ACTIVITY_TITLE = "ACTIVITY_TITLE";
-    }
+class Constants {
+  object IntentKey {
+    const val ACTIVITY_TITLE = "ACTIVITY_TITLE"
+  }
 }
