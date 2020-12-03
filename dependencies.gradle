@@ -7,7 +7,7 @@ ext {
 
     // Android X
     supportVersion = '1.0.0'
-    constrainLayout = '1.1.2'
+    constrainLayout = '2.0.4'
 
     // Test
     jUnitVersion = '4.12'
