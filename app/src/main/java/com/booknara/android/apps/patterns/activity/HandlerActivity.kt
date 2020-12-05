@@ -49,5 +49,6 @@ class HandlerActivity : AppCompatActivity() {
 
   companion object {
     const val TAG = "HandlerActivity"
+    const val TITLE = "Handler"
   }
 }

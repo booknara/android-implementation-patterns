@@ -3,9 +3,6 @@ package com.booknara.android.apps.patterns.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.booknara.android.apps.patterns.R;
-import com.booknara.android.apps.patterns.fragment.SimpleFragment;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
@@ -14,11 +11,15 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.booknara.android.apps.patterns.R;
+import com.booknara.android.apps.patterns.fragment.SimpleFragment;
+
 import static com.booknara.android.apps.patterns.Constants.IntentKey.ACTIVITY_TITLE;
 
 public class ViewPagerActivity extends AppCompatActivity {
     private static final String TAG = "ViewPagerActivity";
     private static final int NUM_PAGES = 5;
+    public static final String TITLE = "Activity & ViewPager";
 
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;

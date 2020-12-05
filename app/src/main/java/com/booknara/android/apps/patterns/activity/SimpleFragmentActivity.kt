@@ -46,5 +46,6 @@ class SimpleFragmentActivity: AppCompatActivity() {
 
   companion object {
     const val TAG = "SimpleFragmentActivity"
+    const val TITLE = "Activity & Fragment"
   }
 }

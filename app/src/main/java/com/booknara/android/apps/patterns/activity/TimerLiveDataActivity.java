@@ -13,6 +13,7 @@ import com.booknara.android.apps.patterns.viewmodel.LiveDataTimerViewModel;
 
 public class TimerLiveDataActivity extends FragmentActivity {
     private static final String TAG = "TimerLiveDataActivity";
+    public static final String TITLE = "Activity Timer using ViewModel";
 
     private ActivityTimerBinding binding;
     private LiveDataTimerViewModel liveDataTimerViewModel;

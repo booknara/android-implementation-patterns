@@ -5,6 +5,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.booknara.android.apps.patterns.R;
 import com.booknara.android.apps.patterns.adapter.SimpleArrayAdapter;
 import com.booknara.android.apps.patterns.listener.OnItemClickListener;
@@ -13,13 +16,11 @@ import com.booknara.android.apps.patterns.utils.ToastFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import static com.booknara.android.apps.patterns.Constants.IntentKey.ACTIVITY_TITLE;
 
 public class ListActivity extends AppCompatActivity implements OnItemClickListener {
     private static final String TAG = "ListActivity";
+    public static final String TITLE = "Activity & ListView (Header & Footer)";
 
     //region Lifecycle callback
     @Override

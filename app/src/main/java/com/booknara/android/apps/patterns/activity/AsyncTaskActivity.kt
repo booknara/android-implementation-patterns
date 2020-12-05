@@ -7,12 +7,16 @@ import com.booknara.android.apps.patterns.R
 import com.booknara.android.apps.patterns.background.HttpAsyncTask
 
 class AsyncTaskActivity: AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_empty)
-        val toolbar = findViewById<Toolbar>(R.id.toolbar_view)
-        setSupportActionBar(toolbar)
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    setContentView(R.layout.activity_empty)
+    val toolbar = findViewById<Toolbar>(R.id.toolbar_view)
+    setSupportActionBar(toolbar)
 
-        HttpAsyncTask(this).execute("https://developer.android.com")
-    }
+    HttpAsyncTask(this).execute("https://developer.android.com")
+  }
+
+  companion object {
+    const val TITLE = "AsyncTask"
+  }
 }

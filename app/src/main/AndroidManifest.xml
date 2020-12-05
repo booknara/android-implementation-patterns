@@ -61,6 +61,10 @@
       android:name=".activity.HandlerThreadActivity"
       android:parentActivityName=".activity.MainActivity" />
 
+    <activity
+      android:name=".activity.CircularButtonActivity"
+      android:parentActivityName=".activity.MainActivity" />
+
     <!--<activity android:name=".activity.CounterViewModelActivity"/>-->
     <!--<activity android:name=".activity.TimerLiveDataActivity"/>-->
 

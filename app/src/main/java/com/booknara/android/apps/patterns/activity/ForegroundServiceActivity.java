@@ -15,6 +15,7 @@ import static com.booknara.android.apps.patterns.Constants.IntentKey.ACTIVITY_TI
 
 public class ForegroundServiceActivity extends AppCompatActivity {
     private static final String TAG = "ForegroundServiceActivity";
+    public static final String TITLE = "Foreground Service";
 
     private Button startButton;
     private Button stopButton;

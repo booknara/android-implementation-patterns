@@ -5,17 +5,18 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.booknara.android.apps.patterns.R;
 import com.booknara.android.apps.patterns.utils.ToastFactory;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import static com.booknara.android.apps.patterns.Constants.IntentKey.ACTIVITY_TITLE;
 
 public class SimpleActivity extends AppCompatActivity {
     private static final String TAG = "SimpleActivity";
+    public static final String TITLE = "Simple Activity";
 
     private FloatingActionButton mainFAB;
     private FloatingActionButton sub1FAB;
@@ -115,7 +116,8 @@ public class SimpleActivity extends AppCompatActivity {
     }
     //endregion
 
-    private void showFABMenu() {
+
+  private void showFABMenu() {
         fabOpened = true;
         sub1FAB.animate().translationY(-getResources().getDimension(R.dimen.fab_sub_1_height));
         sub2FAB.animate().translationY(-getResources().getDimension(R.dimen.fab_sub_2_height));
