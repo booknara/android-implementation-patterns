@@ -39,14 +39,16 @@ android {
 dependencies {
   implementation fileTree(dir: 'libs', include: ['*.jar'])
 
-  implementation supportDependencies.appCompat
-  implementation supportDependencies.recyclerview
-  implementation supportDependencies.design
-  implementation supportDependencies.constrainLayout
+  implementation androidxDependencies.appCompat
+  implementation androidxDependencies.recyclerview
+  implementation androidxDependencies.design
+  implementation androidxDependencies.constrainLayout
 
-  implementation 'androidx.navigation:navigation-fragment-ktx:2.2.2'
-  implementation 'androidx.navigation:navigation-ui-ktx:2.2.2'
+  implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+  implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
   testImplementation testDependencies.junit
+
+  androidTestImplementation androidTestDependencies.core
   androidTestImplementation androidTestDependencies.runner
   androidTestImplementation androidTestDependencies.espressoCore
 

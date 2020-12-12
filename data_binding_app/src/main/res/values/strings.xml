@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Android Data Binding</string>
+    <string name="current_temp">Current Temp: </string>
+    <string name="current_cond">Current Conditions: </string>
+    <string name="wind_chill">Wind chill: </string>
+    <string name="btnSimpleBind">Simple Binding</string>
+    <string name="btnObservable">Observables Binding</string>
+    <string name="feels_like">Feels like: </string>
+    <string name="btnViewmodel">View Model Binding</string>
+    <string name="title_activity_view_mod_example">ViewModExample</string>
+    <string name="edit_temp">Change the temperature:</string>
+    <string name="btnPlus">+</string>
+    <string name="btnMinus">-</string>
+    <string name="tempInF">"Temp. in F: "</string>
+    <string name="twowaybind">Two Way Binding</string>
+</resources>

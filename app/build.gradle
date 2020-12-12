@@ -11,7 +11,7 @@ android {
     targetSdkVersion rootProject.ext.targetSdkVersionNum
     versionCode 1
     versionName "1.0"
-    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    testInstrumentationRunner "androidx.test.ext.runner.AndroidJUnitRunner"
   }
 
   buildFeatures {
@@ -45,14 +45,15 @@ android {
 dependencies {
   implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-  implementation supportDependencies.appCompat
-  implementation supportDependencies.recyclerview
-  implementation supportDependencies.design
-  implementation supportDependencies.constrainLayout
+  implementation androidxDependencies.appCompat
+  implementation androidxDependencies.recyclerview
+  implementation androidxDependencies.design
+  implementation androidxDependencies.constrainLayout
 
   implementation "android.arch.lifecycle:extensions:1.1.1"
   implementation "android.arch.lifecycle:viewmodel:1.1.1"
 
+  implementation "androidx.work:work-runtime-ktx:2.4.0"
   implementation "androidx.room:room-runtime:2.3.0-alpha02"
   implementation "androidx.room:room-ktx:2.3.0-alpha02"
   kapt "androidx.room:room-compiler:2.3.0-alpha02"

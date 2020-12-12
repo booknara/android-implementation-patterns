@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <data>
+
+    <import type="com.booknara.android.apps.patterns.databinding.adapter.Converters"/>
+    <variable
+      name="weather"
+      type="com.booknara.android.apps.patterns.databinding.data.WeatherViewModel" />
+  </data>
+
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TwoWayExample">
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/edCurTemp"
+        android:text="@string/current_temp"
+        android:textSize="24sp" />
+
+      <TextView
+        android:id="@+id/edCurTemp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@{String.valueOf(weather.currentTemp)}"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="20dp"
+      android:orientation="horizontal">
+
+      <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> weather.onIncreaseTemp()}"
+        android:text="@string/btnPlus"
+        android:textSize="18sp" />
+
+      <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> weather.onDecreaseTemp()}"
+        android:text="@string/btnMinus"
+        android:textSize="18sp" />
+    </LinearLayout>
+
+    <SeekBar
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="16dp"
+      android:max="50"
+      android:min="-50"
+      android:progress="@={weather.currentTemp}"/>
+
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal">
+
+      <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@{Converters.tempToDescription(weather.currentTemp)}"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        tools:text="TEMP" />
+    </LinearLayout>
+  </LinearLayout>
+</layout>

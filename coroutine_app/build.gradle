@@ -6,7 +6,7 @@ apply plugin: 'kotlin-kapt'
 android {
   compileSdkVersion 29
   defaultConfig {
-    applicationId "com.example.android.kotlincoroutines"
+    applicationId "com.booknara.android.apps.patterns.coroutines"
     minSdkVersion 21
     targetSdkVersion 29
     versionCode 1
